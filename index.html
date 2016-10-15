@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="style.css" />
 	<script src="leaflet/leaflet-src.js"></script>
 	<script src="jQuery/jquery.js"></script>
+	<meta charset="utf-8">
 </head>
 <body>
 
@@ -15,9 +16,12 @@
 	<script type="text/javascript">
 		latitude = 0;
 		longitude = 0;
-		name = "Test";
-		street = "Knobelsdorffstrasse 21";
-		city = "Berlin"
+		name = "Hilfe mit Herz";
+		gueter = "Möbel, Haushalts- und Elektrogeräte, Bekleidung, Teppiche, Gardinen";
+		transport = "wird kostenfrei abgeholt";
+		time = "keine Angabe";
+		street = "Teupitzer Str. 38";
+		city = "Berlin";
 
 		$.getJSON("http://nominatim.openstreetmap.org/search?street="+street+"&city="+city+"&format=json",function(json){
 			console.log()
@@ -26,7 +30,7 @@
 			var map = L.map('map').setView([latitude, longitude], 13);
 			var OpenStreetMap = L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png', { maxZoom: 25, minZoom: 5, attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>' }).addTo(map);
 			L.marker([latitude, longitude])
-			.bindPopup("<b>"+name+"</b><br>"+street)
+			.bindPopup("<b>"+name+"</b><br>"+street+"<br>Güter: "+gueter+"<br>Öffnungszeiten: "+time)
 			.openPopup()
 			.addTo(map);
 		});

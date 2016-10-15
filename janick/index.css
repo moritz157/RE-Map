@@ -22,6 +22,16 @@ h1 {
   left: 36.5%;
   top: 5%;
 }
+
+.checks{
+  text-align: center;
+  font-size: 25px;
+  position: relative;
+  left: 39%;
+  top: 5%;
+}
+
+
 #kopf{
   background-color: #aeaeae;
   padding: 10px;

@@ -2,10 +2,10 @@
 
 ## Todo-List:
 
-[] Github einrichten
-[] Design
-[] Json parsing
-[] Statische Map
+- Github einrichten [Fertig]
+- Design [In Arbeit]
+- Json parsing [In Arbeit]
+- Statische Map [In Arbeit]
 
 
 ## Credits:

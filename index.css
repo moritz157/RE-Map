@@ -8,21 +8,38 @@ h1 {
 }
 
 #suchfeld{
-  text-align: center;
-  font-size: 25px;
-  position: relative;
-  left: 36.5%;
-  top: 5%;
+    text-align: center;
+    font-size: 25px;
+    position: relative;
+    left: 36.5%;
+    top: 5%;
+    box-shadow: 0;
+    border-style: hidden;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
 }
 
 #btn-search{
-  text-align: center;
-  font-size: 25px;
-  position: relative;
-  left: 36.5%;
-  top: 5%;
+    box-shadow: 0;
+    border-style: hidden;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    text-align: center;
+    font-size: 25px;
+    position: relative;
+    margin: 0;
+    left: 36.5%;
+    top: 5%;
 }
 
+/* Checkbox Design */
+#label_check_floh {
+    color: #ab6200;
+}
+
+#label_check_re {
+    color: #0900e0;
+}
 .checks{
   text-align: center;
   font-size: 25px;
@@ -33,6 +50,7 @@ h1 {
 
 
 #kopf{
+  font-family: sans-serif;
   background-color: #aeaeae;
   padding: 10px;
   left: 0;
@@ -43,9 +61,10 @@ h1 {
 .logo{width: 30%}
 
 footer {
+  position: fixed;
+  z-index: 10;
   text-align: center;
-  left: 9em;
-  right: 9em;
+  width: 100%;
   background-color: #a1a1ee;
 }
 
@@ -66,7 +85,7 @@ a:hover{
   position: relative;
 }
 #map{
-
+  z-index: -5;
 height: 720px;
 
 }

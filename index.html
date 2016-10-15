@@ -14,6 +14,7 @@
 <div id="map"></div>
 
 	<script type="text/javascript">
+
 		latitude = 0;
 		longitude = 0;
 		name = "Hilfe mit Herz";
@@ -23,8 +24,12 @@
 		street = "Teupitzer Str. 38";
 		city = "Berlin";
 
+		$.getJSON("Json_Parser.php",function(json2){
+			name = json2;
+			console.log(name);
+		})
+
 		$.getJSON("http://nominatim.openstreetmap.org/search?street="+street+"&city="+city+"&format=json",function(json){
-			console.log()
 			latitude = json[0]["lat"];
 			longitude = json[0]["lon"];
 			var map = L.map('map').setView([latitude, longitude], 13);

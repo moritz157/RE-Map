@@ -26,11 +26,10 @@
 					var streetDisplay = item["streetDisplay"]
 					var street = item["street"];
 					$.getJSON("http://nominatim.openstreetmap.org/search?street="+street+"&city="+city+"&format=json",function(json){
-						/*if(json.length==0){
+						if(json.length==0){
 							console.log(street);
 							return;
-						}*/
-						console.log(street);
+						};
 						var latitude = json[0]["lat"];
 						var longitude = json[0]["lon"];
 						if(init){
@@ -42,8 +41,33 @@
 						.bindPopup("<b>"+name+"</b><br><br>"+streetDisplay+"<br><br>Güter: "+gueter+"<br><br>Transport: "+transport+"<br><br>Öffnungszeiten: "+time)
 						.openPopup()
 						.addTo(map);
-						gotCoords = true;
 					});
+				});
+			});
+		}
+
+		buildMapL = function(database, marker){
+			$.getJSON(database,function(json2){
+				if(!json2) return;
+				json2.forEach(function(item, index){
+					var name = item["name"];
+					var days = item["days"];
+					var time = item["time"];
+					var owner = item["owner"];
+					var comment = item["comment"];
+					var website = item["website"];
+					var email = item["email"];
+					var latitude = item["lat"];
+					var longitude = item["lon"];
+					if(init){
+						map = L.map('map').setView([latitude, longitude], 13);
+						OpenStreetMap = L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png', { maxZoom: 25, minZoom: 5, attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>' }).addTo(map);
+						init = false;
+					};
+					L.marker([latitude, longitude], {icon: marker})
+					.bindPopup("<b>"+name+"</b><br><br>Öffnungszeiten: "+time+"<br><br>Tage: "+days+"<br><br>Betreiber: "+owner+"<br><br><a href="+website+">"+website+"</a><br><br>Email: "+email+"<br><br>Bemerkungen: "+comment)
+					.openPopup()
+					.addTo(map);
 				});
 			});
 		}
@@ -72,7 +96,7 @@
 			buildMap("ReJson_Parser.php", marker);
 		}
 		if(floMap){
-			buildMap("FloJson_Parser.php", redmarker);
+			buildMapL("FloJson_Parser.php", redmarker);
 		}
 	</script>
 

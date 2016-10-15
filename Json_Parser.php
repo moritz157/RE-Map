@@ -1,5 +1,5 @@
-<meta charset="utf-8">
 <?php
+header('charset: UTF-8');
 $url = "http://www.berlin.de/umwelt/themen/abfall/verschenken-statt-wegwerfen/index.php/index/all.json";
 if(!empty($_GET['q'])){
     $json = file_get_contents($url . "?q=" . $_GET['q']);

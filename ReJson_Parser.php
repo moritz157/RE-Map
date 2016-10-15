@@ -25,8 +25,15 @@ function read_json($json, $final_json){
         if(!empty($item['gueter'])) $final_array['gueter'] = $item['gueter'];
         if(!empty($item['transport'])) $final_array['transport'] = $item['transport'];
         if(!empty($item['zeit'])) $final_array['time'] = $item['zeit'];
-        if(!empty($item['adresse'])) $final_array['street'] = $item['adresse'];
-        $final_array['streetDisplay'] = $final_array['street'];
+        if(!empty($item['adresse'])){
+            $final_array['street'] = $item['adresse'];
+            $str_array = str_split($final_array);
+            
+            foreach($str_array as $char){
+                if($char){}
+            }
+        }
+        if(!empty($item['adresse'])) $final_array['streetDisplay'] = $item['adresse'];
         array_push($final_json, $final_array);
     }
     return $final_json;

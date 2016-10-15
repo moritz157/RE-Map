@@ -85,7 +85,7 @@ a:hover{
   position: relative;
 }
 #map{
-  z-index: -5;
-height: 720px;
+  z-index: 1;
+  height: 720px;
 
 }

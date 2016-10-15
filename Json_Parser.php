@@ -1,12 +1,13 @@
 <?php
 header('charset: UTF-8');
-$url = "http://www.berlin.de/umwelt/themen/abfall/verschenken-statt-wegwerfen/index.php/index/all.json";
+$url = "http://www.berlin.de/umwelt/themen/abfall/verschenken-statt-wegwerfen/index.php/index.json";
 if(!empty($_GET['q'])){
     $json = file_get_contents($url . "?q=" . $_GET['q']);
     read_json($json);
 } else {
     $json = file_get_contents($url);
     read_json($json);
+
 }
 
 // Read Json and print better Json
@@ -32,5 +33,6 @@ function read_json($json){
         if(!empty($item['adresse'])) $final_array['street'] = $item['adresse'];
         array_push($final_json, $final_array);
     }
+    $final_json['count'] = sizeof($final_json);
     echo(json_encode($final_json));
 }

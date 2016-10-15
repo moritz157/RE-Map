@@ -27,11 +27,15 @@ function read_json($json, $final_json){
         if(!empty($item['zeit'])) $final_array['time'] = $item['zeit'];
         if(!empty($item['adresse'])){
             $final_array['street'] = $item['adresse'];
-            $str_array = str_split($final_array);
-            
-            foreach($str_array as $char){
-                if($char){}
+            $str_array = explode(" ", $final_array['street']);
+            $final_adresse = "";
+            foreach($str_array as $snippet){
+                $final_adresse = $final_adresse . $snippet . " ";
+                if(preg_match('/[0-9]/', $snippet)){
+                    break;
+                }
             }
+            $final_array['street'] = $final_adresse;
         }
         if(!empty($item['adresse'])) $final_array['streetDisplay'] = $item['adresse'];
         array_push($final_json, $final_array);

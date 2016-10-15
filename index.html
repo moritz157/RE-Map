@@ -30,10 +30,11 @@
 				var streetDisplay = item["streetDisplay"]
 				var street = item["street"];
 				$.getJSON("http://nominatim.openstreetmap.org/search?street="+street+"&city="+city+"&format=json",function(json){
-					if(json.length==0){
+					/*if(json.length==0){
 						console.log(street);
 						return;
-					}
+					}*/
+					console.log(street);
 					var latitude = json[0]["lat"];
 					var longitude = json[0]["lon"];
 					if(init){

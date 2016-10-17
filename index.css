@@ -1,84 +1,78 @@
-h1 {
-  font-family: sans-serif;
-  text-align: center;
-  font-size: 50px;
-  color: #108d51
-
-
+body{
+  margin: 0px;
 }
-
-#suchfeld{
-    text-align: center;
-    font-size: 25px;
-    position: relative;
-    left: 36.5%;
-    top: 5%;
-    box-shadow: 0;
-    border-style: hidden;
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
-}
-
-#btn-search{
-    box-shadow: 0;
-    border-style: hidden;
-    border-bottom-right-radius: 5px;
-    border-top-right-radius: 5px;
-    text-align: center;
-    font-size: 25px;
-    position: relative;
-    margin: 0;
-    left: 36.5%;
-    top: 5%;
-}
-
-/* Checkbox Design */
-#label_check_floh {
-    color: #ab6200;
-}
-
-#label_check_re {
-    color: #0900e0;
-}
-.checks{
-  text-align: center;
-  font-size: 25px;
-  position: relative;
-  left: 39%;
-  top: 5%;
-}
-
-
-#kopf{
-  font-family: sans-serif;
-  background-color: #aeaeae;
-  padding: 10px;
-  left: 0;
-  right: 0;
-  position: relative;
-  top: 0;
-}
-.logo{width: 30%}
 
 footer {
   position: fixed;
   z-index: 10;
   text-align: center;
   width: 100%;
-  background-color: #a1a1ee;
+  background-color: #ee6e73;
 }
 
-a:link, a:visited {
-    color: #000000;
+footer a{
+  color: white;
 }
 
-a:active{
-    color: #FFFFFF;
+h2{
+  font-family: sans-serif;
+  font-size: 1.5em !important;
+  line-height: 1.5 !important;
+  margin: 8px 0px 0px 50px !important;
 }
 
-a:hover{
-    color: #FF0000;
-    font-weight: bold;
+nav label{
+  color: white;
+}
+
+footer img{
+  height: 23px;
+  width: auto;
+  position: relative;
+  margin: 3px;
+  top: 6px;
+}
+
+.checks{
+  position: relative;
+  width: 200px;
+  margin: 0px;
+  float: left;
+}
+
+.input-field{
+  margin: 0;
+  height: 100%;
+  width: 400px;
+  float: right;
+}
+
+#inputs{
+  position: relative;
+  left: 50%;
+  top: -3px;
+}
+
+#logo{
+  height: 40px;
+  width: auto;
+  position: absolute;
+}
+
+#kopf{
+  background-color: #f99290;
+  height: 43px;
+}
+
+#kopf *{
+  display: inline-block;
+  color: white;
+}
+
+#kopf span{
+  position: relative;
+  top: -2px;
+  left: -10px;
 }
 
 #map-frame {
